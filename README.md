@@ -11,7 +11,7 @@ HealthBridge AI is a Flask-based web application that uses **RAG (Retrieval-Augm
 - 🏥 Doctor and hospital overview
 - 📊 Health metrics visualization
 - 🗄️ Vector search with Qdrant
-- 📄 PDF ingestion for medical knowledge
+- 📄 CSV ingestion for medical knowledge
 
 ---
 

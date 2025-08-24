@@ -1,6 +1,7 @@
 from flask import Flask
 from config import Config
 from extensions import db, migrate
+from models import Users, ChatHistory
 
 # Import rag and init pipeline objects before routes using them
 from rag.data_loader import load_documents

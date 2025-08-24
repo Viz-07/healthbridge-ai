@@ -1,0 +1,152 @@
+/* === Chat Container Styles === */
+#chat-container {
+  width: 100%;
+  min-height: 320px;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 0 12px 72px 12px; /* bottom padding for input bar */
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+/* === Universal message styles === */
+.chat-message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.chat-bubble {
+  background: linear-gradient(95deg, #6d69f2 10%, #34b6fa 70%);
+  display: inline-block;
+  padding: 10px 16px;
+  font-size: 1rem;
+  max-width: 75%;
+  word-break: break-word;
+  box-shadow: 0 1px 3px rgba(100,67,200,0.04);
+  border-radius: 18px;
+  margin: 0 4px;
+}
+
+/* === User Message Styles === */
+.user-message {
+  justify-content: flex-end;
+}
+
+.user-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #6d69f2;
+  color: #181729;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.3rem;
+  margin-left: 10px;
+  margin-right: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+}
+
+.user-bubble {
+  color: #181729;
+  border-radius: 18px 18px 6px 18px;
+  text-align: left;
+  margin-left: 8px;
+  margin-right: 0;
+  align-self: flex-end;
+}
+
+/* === Bot Message Styles === */
+.bot-message {
+  justify-content: flex-start;
+}
+
+.bot-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #34b6fa;
+  color: #181729;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.3rem;
+  margin-right: 10px;
+  margin-left: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+}
+
+.bot-bubble {
+  color: #181729;
+  border-radius: 18px 18px 18px 6px;
+  text-align: left;
+  margin-right: 8px;
+  margin-left: 0;
+  align-self: flex-start;
+}
+
+/* === Input Styling (override, non-conflicting with styles.css) === */
+form .form-control {
+  border: 2px solid #34b6fa;
+  border-radius: 18px !important;
+  font-size: 1rem;
+  padding: 10px 16px;
+  width: 100%;
+  box-sizing: border-box;
+  bottom: -20px;
+}
+
+/* === Responsive Chat UI === */
+@media (max-width: 768px) {
+  #chat-container {
+    max-height: 55vh;
+    padding: 0 4px 70px 4px;
+  }
+  .chat-bubble {
+    font-size: 0.97rem;
+    max-width: 82%;
+    padding: 8px 11px;
+  }
+  .user-icon, .bot-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #chat-container {
+    max-height: 46vh;
+    padding: 0 2px 60px 2px;
+  }
+  .chat-bubble {
+    font-size: 0.92rem;
+    max-width: 96vw;
+    padding: 7px 8px;
+  }
+  .user-icon, .bot-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 0.95rem;
+  }
+}
+
+/* === Utility: Hide scrollbars on Chrome, Safari, etc. === */
+#chat-container::-webkit-scrollbar {
+  display: none;
+}
+#chat-container {
+  scrollbar-width: none;
+}
+
+/* === Z-index utility for floating elements/input if needed === */
+input.form-control, .form-control {
+  position: relative;
+  z-index: 2;
+}

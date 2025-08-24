@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Chat - HealthBridge AI{% endblock %}
+{% block content %}
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+</head>
+<main class="container">
+  <h3 class="mb-4">Chat With HealthBridge AI</h3>
+  <section id="chat-container" class="mb-4" aria-live="polite" aria-label="Chat conversation">
+    {% if chat_history %}
+      {% for user_msg, bot_msg in chat_history %}
+        <div class="chat-message user-message d-flex mb-3" aria-label="Your message">
+          <div class="chat-bubble user-bubble">
+            {{ user_msg }}
+          </div>
+          <div class="chat-icon user-icon" aria-hidden="true">👤</div>
+        </div>
+        <div class="chat-message bot-message d-flex mb-3" aria-label="HealthBridge AI reply">
+          <div class="chat-icon bot-icon" aria-hidden="true">
+            <img src="{{ url_for('static', filename='images/no_bg.png') }}" alt="Stethoscope icon" width="36" height="36">
+          </div>
+          <div class="chat-bubble bot-bubble">
+            {{ bot_msg }}
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </section>
+  <form method="POST" autocomplete="off" aria-label="Send a message" class="mb-4">
+    <input type="text" name="message" id="message" class="form-control" placeholder="Type your message..." required autocomplete="off" autofocus>
+  </form>
+</main>
+<script>
+  window.onload = function() {
+    var chatContainer = document.getElementById('chat-container');
+    if (chatContainer) {
+      chatContainer.scrollTo({
+        top: chatContainer.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+    var input = document.getElementById('message');
+    if (input) input.focus();
+  };
+</script>
+{% endblock %}

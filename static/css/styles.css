@@ -1,0 +1,305 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #181729;
+    margin-bottom: 0.75rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.4rem; }
+h4 { font-size: 1.3rem; }
+
+p, li {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 400;
+    color: #6d758f;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+/* Main Heading */
+.main-heading {
+    font-weight: 800;
+    font-size: 2.5rem;
+    text-align: left;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    color: #181729;
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(90deg, #6d69f2, #34b6fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+/* Card Styles */
+.card, .patient-details-box, .composition-card, .feature-card {
+    background: #6d69f2;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(100,67,200,0.07);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.card:hover, .feature-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(100,67,200,0.15);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Card Titles */
+.card-title {
+    font-weight: 800;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #181729;
+}
+
+.card-title.gradient-text {
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+/* Header Dividers */
+.header-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(109, 105, 242, 0.3) 0%, rgba(52, 182, 250, 0.3) 100%);
+    margin-bottom: 1rem;
+    border-radius: 1px;
+}
+
+.header-divider-center {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #6d69f2, #34b6fa);
+    margin: 0.75rem auto;
+    border-radius: 1px;
+}
+
+.feature-divider {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(109, 105, 242, 0.4) 0%, rgba(52, 182, 250, 0.4) 100%);
+    margin-bottom: 0.75rem;
+    border-radius: 1px;
+}
+
+/* Body Composition Specific */
+.composition-item {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    color: #181729;
+}
+
+.percentage {
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+}
+
+.percentage.oxygen { color: #7b9147; }
+.percentage.carbon { color: #7b6260; }
+.percentage.hydrogen { color: #9087c4; }
+.percentage.nitrogen { color: #f0bc62; }
+.percentage.calcium { color: #b099c5; }
+.percentage.other { color: #89c8b5; }
+
+.body-silhouette {
+    height: 140px;
+    margin-top: 1rem;
+    filter: drop-shadow(0 2px 8px rgba(100,67,200,0.1));
+}
+
+/* Features Section */
+.features-section {
+    background: rgba(247, 245, 252, 0.3);
+    margin-top: 3rem;
+    border-radius: 24px;
+    padding: 2rem 2rem;
+}
+
+.features-heading {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #181729;
+    margin-bottom: 0.5rem;
+}
+
+.features-description {
+    color: #6d758f;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #6d69f2 10%, #34b6fa 90%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(3deg);
+}
+
+.feature-icon i {
+    color: #fff;
+    font-size: 1.25rem;
+}
+
+.feature-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #181729;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-title {
+    transform: translateX(4px);
+}
+
+.feature-description {
+    color: #6d758f;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-description {
+    transform: translateX(4px);
+}
+
+/* Grid and Layout */
+.row.g-4 > [class^="col-"] {
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-bottom: 32px;
+}
+
+/* Button Styles */
+.btn-primary, .button-gradient {
+    background: linear-gradient(90deg, #6d69f2 30%, #34b6fa 40%);
+    border: none;
+    color: #fff;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px 0 rgba(90, 79, 243, 0.09);
+    padding: 12px 28px;
+    transition: box-shadow 0.2s;
+}
+
+.btn-primary:hover, .button-gradient:hover {
+    box-shadow: 0 4px 16px 0 rgba(90, 79, 243, 0.15);
+}
+
+.button-outline {
+    background: transparent;
+    border: 2px solid #A976F8;
+    color: #A976F8;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* List Styles */
+.list-group-item {
+    background: #fff;
+    border: 1px solid #ecebed;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.list-group-item strong {
+    color: #5a4ff3;
+    font-weight: 700;
+}
+
+ul.list-group {
+    box-shadow: 0 2px 8px 0 rgba(80, 80, 120, 0.04);
+}
+
+/* Navbar */
+.navbar {
+    background: #fff;
+    border-bottom: 1px solid #ecebed;
+    box-shadow: 0 2px 8px 0 rgba(80, 80, 120, 0.04);
+}
+
+/* Strong/Bold Text */
+strong {
+    font-weight: 700;
+    color: #181729;
+}
+
+/* Welcome Banner Animation */
+.welcome-banner {
+    text-align: left;
+    margin-bottom: 2rem;
+    overflow: hidden; /* ensures animation stays in bounds */
+}
+
+.welcome-text {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #181729;
+    animation: slideIn 1s ease-out forwards;
+}
+
+.welcome-text {
+    background: linear-gradient(90deg, #6d69f2 5%, #34b6fa 20%);
+    font-size: 3.2rem;
+    font-weight: 800;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0; /* start hidden */
+    animation: fadeIn 1.5s ease-in forwards;
+    animation-delay: 0.2s;
+}
+
+.welcome-description {
+    font-size: 1.05rem;
+    color: #6d758f;
+    margin-top: 0.5rem;
+    opacity: 0; /* start hidden */
+    animation: fadeIn 2s ease-in forwards;
+    animation-delay: 1s; /* appears after the welcome text */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

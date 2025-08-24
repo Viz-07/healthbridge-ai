@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Doctor – HealthBridge AI{% endblock %}
+{% block content %}
+<h3>Our Doctors</h3>
+<div class="row">
+{% for doctor in doctors %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <img src="{{ url_for('static', filename='images/doctor' ~ loop.index ~ '.jpg') }}" class="card-img-left" style="width:100px;float:left;margin-right:20px;" alt="{{ doctor.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ doctor.name }}</h5>
+                <p class="card-text"><strong>Specialty:</strong> {{ doctor.specialty }}</p>
+                <p class="card-text"><strong>Experience:</strong> {{ doctor.experience }} yrs</p>
+                <p class="card-text"><strong>Location:</strong> {{ doctor.location }}</p>
+                <p class="card-text"><strong>Rating:</strong> {{ doctor.rating }}</p>
+                <p class="card-text">{{ doctor.bio }}</p>
+                <a href="#" class="btn btn-outline-primary">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

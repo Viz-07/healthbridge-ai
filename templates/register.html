@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% block navbar %}{% endblock %}
+{% block title %}Register – HealthBridge AI{% endblock %}
+{% block content %}
+<div class="container py-5" style="min-height: 100vh; background-color: #C7E0FF;">
+  <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="register-split-box shadow-sm position-relative">
+      <div class="row no-gutters">
+        <!-- Left / General Information -->
+        <div class="col-md-6 p-4" style="background: linear-gradient(135deg, #4a90e2 0%, #2a62ba 100%); color: white; border-top-left-radius: 18px; border-bottom-left-radius: 18px;">
+          <h5 class="mb-4" style="font-weight:600;">General Information</h5>
+          <form method="POST">
+            <div class="form-group mb-3">
+              <label for="name"><strong>Username:</strong></label>
+              <input type="text" class="form-control input-custom" id="name" name="name" required>
+            </div>
+            <div class="form-group mb-3">
+              <label for="email"><strong>Email:</strong></label>
+              <input type="email" class="form-control input-custom" id="email" name="email" required>
+            </div>
+            <div class="form-group mb-3">
+              <label for="password"><strong>Password:</strong></label>
+              <input type="password" class="form-control input-custom" id="password" name="password" required>
+            </div>
+        </div>
+
+
+        <!-- MIDDLE CURVED SVG DIVIDER -->
+        <div class="split-wave d-none d-md-block">
+          <svg width="42" height="100%" viewBox="0 0 42 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:100%;">
+            <path d="M 0 0 Q 42 80 42 300 Q 42 520 0 600 L 42 600 L 42 0 Z"
+              fill="#f7f5ff"/>
+          </svg>
+        </div>
+
+
+        <!-- Right / Personal & Health Details -->
+        <div class="col-md-6 p-4 right-column" style="background: linear-gradient(135deg, #f7f9fc 0%, #d1d9ea 100%); border-top-right-radius: 18px; border-bottom-right-radius: 18px; color: #1b2a4d;">
+          <h5 class="mb-4" style="font-weight:600;">Personal & Health Details</h5>
+            <div class="form-row mb-2">
+              <div class="col">
+                <label for="age" style="color: #1b2a4d;"><strong>Age:</strong></label>
+                <input type="number" class="form-control input-custom" id="age" name="age" required>
+              </div>
+              <div class="col">
+                <label for="gender" style="color: #1b2a4d;"><strong>Gender:</strong></label>
+                <select class="form-control input-custom" id="gender" name="gender" required>
+                  <option value="">Select</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="col">
+                <label for="height" style="color: #1b2a4d;"><strong>Height(cm):</strong></label>
+                <input type="number" step="0.1" class="form-control input-custom" id="height" name="height" required>
+              </div>
+            </div>
+            <div class="form-row mb-2">
+              <div class="col">
+                <label for="weight" style="color: #1b2a4d;"><strong>Weight (kg):</strong></label>
+                <input type="number" step="0.1" class="form-control input-custom" id="weight" name="weight" required>
+              </div>
+              <div class="col">
+                <label for="blood_type" style="color: #1b2a4d;"><strong>Blood Type:</strong></label>
+                <select class="form-control input-custom" id="blood_type" name="blood_type" required>
+                  <option value="">Select</option>
+                  <option>A+</option><option>A-</option>
+                  <option>B+</option><option>B-</option>
+                  <option>O+</option><option>O-</option>
+                  <option>AB+</option><option>AB-</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group mb-2">
+              <label for="allergies" style="color: #1b2a4d;"><strong>Allergies:</strong></label>
+              <textarea class="form-control input-custom" id="allergies" name="allergies" rows="1"></textarea>
+            </div>
+            <div class="form-group mb-3">
+              <label for="past_illnesses" style="color: #1b2a4d;"><strong>Past Illnesses:</strong></label>
+              <textarea class="form-control input-custom" id="past_illnesses" name="past_illnesses" rows="1"></textarea>
+            </div>
+            <button type="submit" class="btn w-100 mt-3 register-btn">Register</button>
+            </form>
+            <p class="mt-2 text-center" style="color: #1b2a4d;">
+              Already have an account? 
+              <a href="{{ url_for('auth.login') }}" style="color: #4a90e2; font-weight: 600;">Login</a>
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #C7E0FF;
+}
+.register-split-box {
+  border-radius: 18px;
+  overflow: hidden;
+  width: 700px;
+  background: transparent; /* transparent since left/right have colors */
+  border: none;
+  /* Stronger box shadow */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  position: relative;
+}
+/* Style and position the wave divider */
+.split-wave {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .register-split-box { width: 100%; background: white; border-radius: 18px; }
+  .row.no-gutters { flex-direction: column; }
+  .split-wave { display: none !important; }
+  .register-left, .right-column {
+    border-radius: 0 !important;
+  }
+}
+.form-control.input-custom {
+  border: 1px solid #a9b4db;
+  border-radius: 8px;
+  padding: 0.4rem 1rem;
+  font-size: 1rem;
+  color: #1b2a4d;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  background-color: #f9fbff;
+}
+.form-control.input-custom:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 6px #4a90e2;
+}
+.register-btn {
+  background: linear-gradient(90deg, #6d69f2 30%, #34b6fa 70%);
+  color: white;
+  font-weight: 600;
+  border: none;
+  transition: opacity 0.3s ease;
+}
+.register-btn:hover {
+  opacity: 0.9;
+}
+</style>
+{% endblock %}

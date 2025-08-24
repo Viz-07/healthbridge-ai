@@ -1,0 +1,72 @@
+# ----------------------
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.db
+*.sqlite3
+
+# ----------------------
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# ----------------------
+# Environment & secrets
+.env
+*.secret
+*.key
+*.pem
+
+# ----------------------
+# Logs & cache
+*.log
+*.pid
+*.gz
+*.DS_Store
+.cache/
+.mypy_cache/
+.pytest_cache/
+.ipynb_checkpoints/
+*.coverage
+
+# ----------------------
+# Flask / Alembic
+instance/
+migrations/versions/*.pyc
+*.db-journal
+
+# ----------------------
+# IDE / Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ----------------------
+# Node / Frontend
+node_modules/
+build/
+dist/
+*.lock
+
+# ----------------------
+# Data files (prevent pushing large datasets)
+data/*.csv
+data/*.xlsx
+data/*.parquet
+data/*.json
+data/*.zip
+
+# ----------------------
+# Jupyter
+*.ipynb
+*.ipynb_checkpoints/
+
+# ----------------------
+# OS specific
+Thumbs.db
+ehthumbs.db

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Settings – HealthBridge AI{% endblock %}
+{% block content %}
+<div class="container mt-5" style="max-width: 500px;">
+    <h3 class="mb-4">Account Settings</h3>
+    
+    <!-- Logout Form -->
+    <form method="POST" action="{{ url_for('auth.logout') }}">
+        <button type="submit" class="btn btn-secondary btn-block mb-3">Log Out</button>
+    </form>
+    
+    <!-- Delete Account Form -->
+    <form method="POST" action="{{ url_for('settings.delete_account') }}">
+        <button type="submit" class="btn btn-danger btn-block"
+            onclick="return confirm('Are you sure? This will permanently delete your account!');">
+            Delete My Account
+        </button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+{% block title %}Overview – HealthBridge AI{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <!-- Welcome Animation -->
+    <div class="welcome-banner">
+        <h2 class="welcome-text">Welcome, {{ patient.name }} 👋</h2>
+        <p class="welcome-description">
+            HealthBridge AI helps you track, analyze, and understand your health with AI-powered insights.
+        </p>
+    </div>
+
+
+    <h1 class="main-heading">
+        Understand Your<br>
+        Symptoms with<br>
+        <span class="gradient-text">AI Precision</span>
+    </h1>
+    
+    <div class="row justify-content-center align-items-stretch g-4">
+        <!-- Patient Details -->
+        <div class="col-md-4 d-flex">
+            <div class="card patient-details-box flex-fill">
+                <div class="card-body">
+                    <h4 class="card-title gradient-text">Patient Details</h4>
+                    <div class="header-divider"></div>
+                    <p><strong>Name:</strong> {{ patient.name }}</p>
+                    <p><strong>Email:</strong> {{ patient.email }}</p>
+                    <p><strong>Age:</strong> {{ patient.age }}</p>
+                    <p><strong>Blood Type:</strong> {{ patient.gender }}</p>
+                    <p><strong>Last Checkup:</strong> {{ patient.height }}</p>
+                    <p><strong>Conditions:</strong> {{ patient.blood_type }}</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Body Composition -->
+        <div class="col-md-4 d-flex">
+            <div class="card composition-card flex-fill">
+                <div class="card-body d-flex flex-column">
+                    <h4 class="card-title gradient-text">Body Composition</h4>
+                    <div class="header-divider"></div>
+                    <div class="d-flex justify-content-between w-100 mb-3">
+                        <div>
+                            <div class="composition-item"><span class="percentage oxygen">45%</span> Oxygen</div>
+                            <div class="composition-item"><span class="percentage carbon">20%</span> Carbon</div>
+                            <div class="composition-item"><span class="percentage hydrogen">16%</span> Hydrogen</div>
+                        </div>
+                        <div>
+                            <div class="composition-item"><span class="percentage nitrogen">10%</span> Nitrogen</div>
+                            <div class="composition-item"><span class="percentage calcium">7%</span> Calcium</div>
+                            <div class="composition-item"><span class="percentage other">5%</span> Other</div>
+                        </div>
+                    </div>
+                    <div class="w-100 d-flex justify-content-center">
+                        <img src="{{ url_for('static', filename='images/human.png') }}" alt="Body Silhouette" class="body-silhouette" style="height: 250px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Health Report -->
+        <div class="col-md-4 d-flex">
+            <div class="card patient-details-box flex-fill">
+                <div class="card-body">
+                    <h4 class="card-title gradient-text">Health Report</h4>
+                    <div class="header-divider"></div>
+                    <p><strong>Blood Pressure:</strong> {{ metrics.allergies }}</p>
+                    <p><strong>Temperature:</strong> {{ metrics.past_illnesses }} &deg;F</p>
+                    <p><strong>Weight:</strong> {{ metrics.weight }} kg</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features-section py-5 mt-5">
+        <div class="text-center mb-5">
+            <h2 class="features-heading">
+                <span class="gradient-text">Comprehensive Health Insights</span>
+            </h2>
+            <div class="header-divider-center"></div>
+            <p class="features-description">
+                HealthBridge AI combines cutting-edge AI with medical knowledge to provide you with actionable health insights.
+            </p>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Feature 1: Symptom Analysis -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="feature-title">Symptom Analysis</h3>
+                        <div class="feature-divider"></div>
+                        <p class="feature-description">Input your symptoms and receive AI-powered analysis of potential health conditions.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature 2: Precaution Recommendations -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Precaution Recommendations</h3>
+                        <div class="feature-divider"></div>
+                        <p class="feature-description">Get personalized precautionary measures to help manage your health condition.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature 3: Diet Suggestions -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3 class="feature-title">Diet Suggestions</h3>
+                        <div class="feature-divider"></div>
+                        <p class="feature-description">Receive dietary recommendations tailored to your health needs and predicted conditions.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature 4: Nearby Hospitals -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Nearby Hospitals</h3>
+                        <div class="feature-divider"></div>
+                        <p class="feature-description">Find healthcare facilities near you for professional medical assistance.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature 5: Health Reports -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <h3 class="feature-title">Health Reports</h3>
+                        <div class="feature-divider"></div>
+                        <p class="feature-description">Generate comprehensive reports of your health analysis that you can share with healthcare providers.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature 6: Health Education -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h3 class="feature-title">Health Education</h3>
+                        <div class="feature-divider"></div>
+                        <p class="feature-description">Access educational resources about various health conditions and preventive care.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

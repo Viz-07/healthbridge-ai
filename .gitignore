@@ -70,3 +70,7 @@ data/*.zip
 # OS specific
 Thumbs.db
 ehthumbs.db
+
+# ----------------------
+# Ignore chroma DB folder
+chroma_db/
